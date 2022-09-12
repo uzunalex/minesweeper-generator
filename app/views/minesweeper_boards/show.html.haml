@@ -1,0 +1,13 @@
+%section.fdb-block.text-center
+    %p#notice= notice
+    = link_to 'Back', minesweeper_boards_path
+    .container
+        .row.justify-content-center
+        .col-12
+            %h1= @minesweeper_board.name
+            %p Email: #{@minesweeper_board.email}
+            %p Height: #{@minesweeper_board.height}
+            %p Width: #{@minesweeper_board.width}
+            %p Mines: #{@minesweeper_board.mines}
+
+            %p= @minesweeper_board.board_state
