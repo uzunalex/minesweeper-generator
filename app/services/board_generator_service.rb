@@ -12,10 +12,14 @@ class BoardGeneratorService
       row = []
 
       for j in 0..m - 1 do
-        row << { bomb: bombs.include?([i, j]) }
+        row << { bomb: 0 }
       end
 
       board << row
+    end
+
+    bombs.each do |x, y|
+      board[x][y][:bomb] = 1
     end
 
     board
