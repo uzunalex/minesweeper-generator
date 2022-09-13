@@ -2,22 +2,28 @@
   .container
     .row.justify-content-center
       .col-10
-        - if @minesweeper_board.errors.any?
-          %ul.text-danger
-            - @minesweeper_board.errors.full_messages.each do |message|
-              %li= message
-        .row.align-items-center
+        .row.align-items-start
           .col
             = f.text_field :name, class: "form-control", placeholder: "Board Name"
-        .row.align-items-center.mt-4
+            %div.text-danger.mx-2.text-left{ style: "font-size: 0.8rem" }
+              = @minesweeper_board.errors.full_messages_for(:name).uniq[0]
+        .row.align-items-start.mt-4
           .col
             = f.text_field :email, type: :email, class: "form-control", placeholder: "Email"
-        .row.align-items-center.mt-4
+            %div.text-danger.mx-2.text-left{ style: "font-size: 0.8rem" }
+              = @minesweeper_board.errors.full_messages_for(:email).uniq[0]
+        .row.align-items-start.mt-4
           .col
             = f.number_field :height, class: "form-control", placeholder: "Height"
+            %div.text-danger.mx-2.text-left{ style: "font-size: 0.8rem" }
+              = @minesweeper_board.errors.full_messages_for(:height).uniq[0]
           .col
             = f.number_field :width, class: "form-control", placeholder: "Width"
+            %div.text-danger.mx-2.text-left{ style: "font-size: 0.8rem" }
+              = @minesweeper_board.errors.full_messages_for(:width).uniq[0]
           .col
             = f.number_field :mines, class: "form-control", placeholder: "Mines"
+            %div.text-danger.mx-2.text-left{ style: "font-size: 0.8rem" }
+              = @minesweeper_board.errors.full_messages_for(:mines).uniq[0]
         = f.submit "Generate board", class: "btn btn-primary mt-4 w-100", role: "button"
 

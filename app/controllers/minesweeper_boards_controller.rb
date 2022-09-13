@@ -20,6 +20,7 @@ class MinesweeperBoardsController < ApplicationController
 
   # POST /minesweeper_boards or /minesweeper_boards.json
   def create
+    @minesweeper_boards = MinesweeperBoard.all.order(created_at: :desc).limit(10)
     @minesweeper_board = MinesweeperBoard.new(minesweeper_board_params)
 
     respond_to do |format|
