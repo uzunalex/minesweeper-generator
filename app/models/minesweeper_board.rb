@@ -4,7 +4,7 @@ class MinesweeperBoard < ApplicationRecord
   validates :name, presence: true
   validates :height, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :width, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :mines, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :mines, presence: true, numericality: { only_integer: true, greater_than: -1 }
 
   validate :mines_are_less_than_cells, on: :create
 
