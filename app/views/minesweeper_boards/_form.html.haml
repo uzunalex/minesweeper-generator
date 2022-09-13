@@ -1,7 +1,7 @@
 = form_for @minesweeper_board do |f|
   .container
-    .row.justify-content-center
-      .col-10
+    .row.justify-content-center{ style: "width: 100%" }
+      .col-12
         .row.align-items-start
           .col
             = f.text_field :name, class: "form-control", placeholder: "Board Name"
