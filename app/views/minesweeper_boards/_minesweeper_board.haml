@@ -1,5 +1,5 @@
 -# - debugger
-%table.table.table-bordered{ style: "width: #{@minesweeper_board.board_state[0].length * 50}px;" }
+%table.table.table-bordered
     - @minesweeper_board.board_state.each do |row|
         %tr
         - row.each do |cell|

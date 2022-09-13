@@ -1,4 +1,4 @@
-%section.fdb-block.text-center.pt-3
+%section.fdb-block.text-center.pt-3{style: "overflow: scroll;"}
     %p#notice= notice
     .container
         .row.ml-2
@@ -34,5 +34,5 @@
         %br/
         .col-12
             %h1.text-left Board
-            .row.justify-content-start
+            .row.justify-content-start.pr-4{ style: "width: #{@minesweeper_board.board_state[0].length * 50}px; overflow: scroll;" }
                 = render 'minesweeper_board'
