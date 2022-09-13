@@ -1,19 +1,15 @@
-%h1 Listing minesweeper_boards
-
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @minesweeper_boards.each do |minesweeper_board|
-      %tr
-        %td= link_to 'Show', minesweeper_board
-        %td= link_to 'Edit', edit_minesweeper_board_path(minesweeper_board)
-        %td= link_to 'Destroy', minesweeper_board, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Minesweeper board', new_minesweeper_board_path
+%table.table.table-bordered
+    %thead
+        %tr 
+            %th Name 
+            %th Email 
+            %th Created at
+    %tbody 
+    - @minesweeper_boards&.each do |minesweeper_board|
+        %tr
+            %td
+                =link_to "#{minesweeper_board.name}", minesweeper_board
+            %td
+                =minesweeper_board.email
+            %td
+                =minesweeper_board.created_at
