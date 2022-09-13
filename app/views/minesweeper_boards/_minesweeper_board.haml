@@ -1,0 +1,7 @@
+-# - debugger
+%table.table.table-bordered{ style: "width: #{@minesweeper_board.board_state[0].length * 50}px;" }
+    - @minesweeper_board.board_state.each do |row|
+        %tr
+        - row.each do |cell|
+            %td{ style: "height: 50px; width: 50px; text-align: center;" }
+                = cell['bomb'] == 1 ? '💣' : "\n" 

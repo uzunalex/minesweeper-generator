@@ -5,9 +5,11 @@
         .row.justify-content-center
         .col-12
             %h1= @minesweeper_board.name
-            %p Email: #{@minesweeper_board.email}
-            %p Height: #{@minesweeper_board.height}
-            %p Width: #{@minesweeper_board.width}
-            %p Mines: #{@minesweeper_board.mines}
-
-            %p= @minesweeper_board.board_state
+            .row.justify-content-center
+                %p Email: #{@minesweeper_board.email};
+                %p Height: #{@minesweeper_board.height}; 
+                %p Width: #{@minesweeper_board.width};
+                %p Mines: #{@minesweeper_board.mines}; 
+        .col-12
+            .row.justify-content-center
+                = render 'minesweeper_board'
