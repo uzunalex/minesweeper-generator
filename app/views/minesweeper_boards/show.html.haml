@@ -1,15 +1,38 @@
-%section.fdb-block.text-center
+%section.fdb-block.text-center.pt-3
     %p#notice= notice
-    = link_to 'Back', minesweeper_boards_path
     .container
+        .row.ml-2
+            = link_to 'Back', root_path, class: 'btn btn-primary'
+        %br/
         .row.justify-content-center
         .col-12
-            %h1= @minesweeper_board.name
+            %h1.text-left Details
             .row.justify-content-center
-                %p Email: #{@minesweeper_board.email};
-                %p Height: #{@minesweeper_board.height}; 
-                %p Width: #{@minesweeper_board.width};
-                %p Mines: #{@minesweeper_board.mines}; 
+                %table.table.table-bordered
+                    %thead
+                        %tr 
+                            %th Name 
+                            %th Email 
+                            %th Height 
+                            %th Width
+                            %th Mines
+                            %th Created at
+                    %tbody 
+                        %tr
+                            %td
+                                =@minesweeper_board.name
+                            %td
+                                =@minesweeper_board.email
+                            %td
+                                =@minesweeper_board.height
+                            %td
+                                =@minesweeper_board.width
+                            %td
+                                =@minesweeper_board.mines
+                            %td
+                                =@minesweeper_board.created_at
+        %br/
         .col-12
-            .row.justify-content-center
+            %h1.text-left Board
+            .row.justify-content-start
                 = render 'minesweeper_board'

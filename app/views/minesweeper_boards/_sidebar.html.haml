@@ -1,0 +1,15 @@
+%table.table.table-bordered
+    %thead
+        %tr 
+            %th Name 
+            %th Email 
+            %th Created at
+    %tbody 
+    - @minesweeper_boards.each do |minesweeper_board|
+        %tr
+            %td
+                =link_to "#{minesweeper_board.name}", minesweeper_board
+            %td
+                =minesweeper_board.email
+            %td
+                =minesweeper_board.created_at

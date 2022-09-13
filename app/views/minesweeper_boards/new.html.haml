@@ -1,3 +1,9 @@
-%section.fdb-block.text-center
+%section.fdb-block.text-center.pt-5
     %h1 Minesweeper board generator
-    = render 'form'
+    %br/
+    .fdb-box.fdb-touch.pt-10{ style: "width: 90%; margin: 0 auto; min-height: 70vh" }
+        .row
+            .col-6
+                = render 'sidebar'
+            .col-6
+                = render 'form'

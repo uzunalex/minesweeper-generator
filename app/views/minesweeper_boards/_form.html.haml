@@ -1,13 +1,13 @@
 = form_for @minesweeper_board do |f|
   .container
     .row.justify-content-center
-      .col-12.col-md-8.col-lg-8.col-xl-6
+      .col-10
         - if @minesweeper_board.errors.any?
           %ul.text-danger
             - @minesweeper_board.errors.full_messages.each do |message|
               %li= message
         .row.align-items-center
-          .col.mt-4
+          .col
             = f.text_field :name, class: "form-control", placeholder: "Board Name"
         .row.align-items-center.mt-4
           .col

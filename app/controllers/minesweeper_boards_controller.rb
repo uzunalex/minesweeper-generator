@@ -12,6 +12,7 @@ class MinesweeperBoardsController < ApplicationController
   # GET /minesweeper_boards/new
   def new
     @minesweeper_board = MinesweeperBoard.new
+    @minesweeper_boards = MinesweeperBoard.all.order(created_at: :desc).limit(10)
   end
 
   # GET /minesweeper_boards/1/edit
